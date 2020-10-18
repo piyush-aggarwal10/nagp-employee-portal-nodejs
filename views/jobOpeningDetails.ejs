@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head'); %>
+</head>
+<body class="container">
+
+<header>
+    <%- include('./partials/header'); %>
+</header>
+
+<main>
+    <div class="">
+        <h1>Job Opening Details</h1>
+            <ul>
+                <li> <%= openingDetails.projectName %> </li>
+                <li> <%= openingDetails.clientName %> </li>
+                <li> <%= openingDetails.technologies %> </li>
+                <li> <%= openingDetails.role %> </li>
+                <li> <%= openingDetails.jobDescription %> </li>
+            </ul>        
+            <a href="/applyToJob/<%= openingDetails.id %>">Apply Here</button>
+    </div>
+</main>
+
+<footer>
+    <%- include('./partials/footer'); %>
+</footer>
+</body>
+</html>

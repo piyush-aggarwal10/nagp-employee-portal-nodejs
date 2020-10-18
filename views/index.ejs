@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <script>
+        localStorage.setItem('token', "<%= JSON.stringify(userDetails) %>"); 
+    </script>
+    <%- include('./partials/head'); %>
+</head>
+<body class="container">
+
+<header>
+    <%- include('./partials/header'); %>
+</header>
+
+<main>
+    <div class="jumbotron">
+        <h1>Job Openings</h1>
+
+        <% for (var i = 0; i < openings.length ; i++) { %>
+            <h5><a href="/ui/jobDetails/<%= openings[i].id %>" >Opening <%= i+1 %></a></h5>
+            <ul>
+                <li> <b>Project Name: </b><%= openings[i].projectName %> </li>
+                <li> <b>Technologies: </b><%= openings[i].technologies %> </li>
+                <li> <b>Role: </b><%= openings[i].role %> </li>
+            </ul>
+        <% } %>
+        
+    </div>
+</main>
+
+<footer>
+    <%- include('./partials/footer'); %>
+</footer>
+
+</body>
+</html>
